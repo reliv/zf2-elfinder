@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * ElFinder Includes
+ */
+
+/*   Google Jquery if needed */
+
+if (!empty($this->useGoogleJquery) && $this->useGoogleJquery === true) {
+    $this->headScript()->appendFile(
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js', 'text/javascript'
+    );
+
+    $this->headScript()->appendFile(
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js', 'text/javascript'
+    );
+
+    $this->headLink()->appendStylesheet(
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css'
+    );
+}
+
+$this->headScript()->appendFile(
+    $this->basePath() . '/modules/elfinder/js/elfinder.min.js', 'text/javascript'
+);
+
+$this->headLink()->appendStylesheet(
+    $this->basePath() . '/modules/elfinder/css/elfinder.min.css'
+);
+
+$this->headLink()->appendStylesheet(
+    $this->basePath() . '/modules/elfinder/css/theme.css'
+);
+
