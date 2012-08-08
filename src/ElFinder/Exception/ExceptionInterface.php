@@ -22,7 +22,7 @@
  * @link      http://zend.com
  */
 
-namespace Rcm\Exception;
+namespace ElFinder\Exception;
 
 /**
  * Exception Interface for Reliv Common

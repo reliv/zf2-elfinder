@@ -80,7 +80,7 @@ class IndexController extends AbstractActionController
 
 
     public function getConfig() {
-        $config = $this->locator->get('config');
+        $config = $this->getServiceLocator()->get('config');
 
 
         return $config['elfinder'];

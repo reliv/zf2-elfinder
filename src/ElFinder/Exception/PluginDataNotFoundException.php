@@ -17,7 +17,7 @@
  * @version   GIT: <git_id>
  * @link      http://ci.reliv.com/confluence
  */
-namespace Rcm\Exception;
+namespace ElFinder\Exception;
 
 /**
  * Reliv Common's Invalid Argument Exception
