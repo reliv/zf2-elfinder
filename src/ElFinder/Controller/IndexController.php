@@ -46,10 +46,20 @@ class IndexController extends AbstractActionController
      */
     public function indexAction()
     {
-
+        return $this->init();
     }
 
     public function ckEditorFileManagerAction()
+    {
+        return $this->init();
+    }
+
+    public function standAloneAction()
+    {
+        return $this->init();
+    }
+
+    public function init()
     {
         $return = array();
 

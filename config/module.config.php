@@ -82,9 +82,9 @@ return array(
     'router' => array(
         'routes' => array (
             'elFinder' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
-                    'route'    => '/elfinder',
+                    'route'    => '/elfinder[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinder\Controller\IndexController',
@@ -101,6 +101,17 @@ return array(
                         => 'ElFinder\Controller\IndexController',
                         'action'     => 'connector',
                     )
+                ),
+            ),
+            'elFinderStandAlone' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route'    => '/elfinder/standalone[/:fileType]',
+                    'defaults' => array(
+                        'controller'
+                        => 'ElFinder\Controller\IndexController',
+                        'action'     => 'standAlone',
+                    ),
                 ),
             ),
             'elFinderCkEditor' => array(
