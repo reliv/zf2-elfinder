@@ -1,4 +1,2 @@
-zf2-elfinder
-============
-
-zf2-elfinder
+Zf2 Module for ElFinder
+==============

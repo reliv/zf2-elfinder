@@ -1,0 +1,15 @@
+<?php
+include 'common.phtml';
+?>
+
+<script type="text/javascript">
+    $(function(){
+        var elf = $('#elfinder').elfinder({
+            // lang: 'ru',             // language (OPTIONAL)
+            url : '/elfinder/connector'  // connector URL (REQUIRED)
+        }).elfinder('instance');
+    });
+</script>
+
+<div id="elfinder"></div>
+

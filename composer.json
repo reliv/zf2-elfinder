@@ -1,0 +1,39 @@
+{
+    "name": "elfinder",
+    "description": "Zf2 Module for ElFinder",
+    "type": "library",
+    "license": "BSD",
+    "keywords": [
+        "elfinder"
+    ],
+    "homepage": "http://www.reliv.com/",
+    "authors": [
+        {
+            "name": "Westin Shafer",
+            "email": "wshafer@relivinc.com",
+            "homepage": "http://www.reliv.com"
+        },
+        {
+            "name": "Rod Mcnew",
+            "email": "rmcnew@relivinc.com",
+            "homepage": "http://www.reliv.com/"
+        },
+        {
+            "name": "Brian Janish",
+            "email": "bjanish@relivinc.com",
+            "homepage": "http://www.reliv.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "ElFinder": "src/"
+        },
+        "classmap": [
+            "./"
+        ]
+    }
+}
