@@ -26,7 +26,7 @@ return array(
         'mounts' => array(
             'images' => array(
                 'roots' => array(
-                    array(
+                    0 => array(
                         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
                         'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
                         'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
@@ -38,7 +38,7 @@ return array(
             ),
             'defaults' => array(
                 'roots' => array(
-                    array(
+                    0 => array(
                         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
                         'path'          => __DIR__.'/../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
                         'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
@@ -53,7 +53,7 @@ return array(
                             ),
                         ),
                     ),
-                    array(
+                    1 => array(
                         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
                         'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
                         'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
