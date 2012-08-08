@@ -19,6 +19,31 @@
  * @link      http://ci.reliv.com/confluence
  */
 
+$elFinder['files'] = array(
+    'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
+    'path'          => __DIR__.'/../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
+    'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
+    'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
+    'attributes' => array(
+        array( // hide readmes
+            'pattern' => '/images/',
+            'read' => false,
+            'write' => false,
+            'hidden' => true,
+            'locked' => false
+        ),
+    ),
+);
+
+$elFinder['images'] = array(
+    'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
+    'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
+    'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
+    'uploadAllow' => array('image'),        //Allowed types
+    'uploadOrder' => array('allow', 'deny'), // White list
+    'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
+);
+
 return array(
 
     'elfinder' => array(
@@ -26,41 +51,13 @@ return array(
         'mounts' => array(
             'images' => array(
                 'roots' => array(
-                    'images' => array(
-                        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-                        'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
-                        'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
-                        'uploadAllow' => array('image'),        //Allowed types
-                        'uploadOrder' => array('allow', 'deny'), // White list
-                        'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
-                    ),
+                    'images' => $elFinder['images']
                 ),
             ),
             'defaults' => array(
                 'roots' => array(
-                    'files' => array(
-                        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-                        'path'          => __DIR__.'/../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
-                        'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
-                        'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
-                        'attributes' => array(
-                            array( // hide readmes
-                                'pattern' => '/images/',
-                                'read' => false,
-                                'write' => false,
-                                'hidden' => true,
-                                'locked' => false
-                            ),
-                        ),
-                    ),
-                    'images' => array(
-                        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-                        'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
-                        'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
-                        'uploadAllow' => array('image'),        //Allowed types
-                        'uploadOrder' => array('allow', 'deny'), // White list
-                        'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
-                    ),
+                    'files' => $elFinder['files'],
+                    'images' => $elFinder['images'],
                 ),
             )
         ),
