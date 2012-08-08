@@ -22,13 +22,28 @@
 return array(
 
     'elfinder' => array(
-        'roots' => array(
-            array(
-                'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-                'path'          => __DIR__.'/../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
-                'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
-                'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
+        'connectorPath' => '/elfinder/connector',  //See routes below.  This must be routeable.
+        'mounts' => array(
+            'images' => array(
+                'roots' => array(
+                    array(
+                        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
+                        'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
+                        'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
+                        'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
+                    ),
+                ),
             ),
+            'defaults' => array(
+                'roots' => array(
+                    array(
+                        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
+                        'path'          => __DIR__.'/../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
+                        'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
+                        'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
+                    ),
+                ),
+            )
         ),
     ),
 
@@ -59,25 +74,25 @@ return array(
                 ),
             ),
             'elFinderConnector' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type'    => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
-                    'route'    => '/elfinder/connector',
+                    'route' => '/elfinder/connector[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinder\Controller\IndexController',
                         'action'     => 'connector',
-                    ),
+                    )
                 ),
             ),
             'elFinderCkEditor' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type'    => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
-                    'route'    => '/elfinder/ckeditor',
+                    'route' => '/elfinder/ckeditor[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinder\Controller\IndexController',
                         'action'     => 'ckEditorFileManager',
-                    ),
+                    )
                 ),
             ),
         ),

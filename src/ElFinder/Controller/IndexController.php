@@ -51,7 +51,27 @@ class IndexController extends AbstractActionController
 
     public function ckEditorFileManagerAction()
     {
+        $return = array();
 
+        $config = $this->getConfig();
+
+        $connector = $config['connectorPath'];
+
+        $type = $this->getEvent()->getRouteMatch()->getParam('fileType');
+
+        if (empty($connector)) {
+            throw new \ElFinder\Exception\RuntimeException("
+                No Connector path found in Module config
+            ");
+        }
+
+        if (!empty($type)) {
+            $return['connectorPath'] = $connector.'/'.$type;
+        } else {
+            $return['connectorPath'] = $connector;
+        }
+
+        return $return;
     }
 
     public function connectorAction()
@@ -64,11 +84,19 @@ class IndexController extends AbstractActionController
 
         $config = $this->getConfig();
 
-        foreach($config['roots'] as $k => $v) {
-            $config['roots'][$k]['accessControl'] = array($this,'access');
+        $type = $this->getEvent()->getRouteMatch()->getParam('fileType');
+
+        if (!empty($type) && !empty($config['mounts'][$type])) {
+            $mount = $config['mounts'][$type];
+        } else {
+            $mount = $config['mounts']['defaults'];
         }
 
-        $connector = new \elFinderConnector(new \elFinder($config));
+        foreach($mount['roots'] as $k => $v) {
+            $mount['roots'][$k]['accessControl'] = array($this,'access');
+        }
+
+        $connector = new \elFinderConnector(new \elFinder($mount));
         $connector->run();
     }
 
