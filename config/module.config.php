@@ -30,6 +30,8 @@ return array(
                         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
                         'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
                         'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
+                        'uploadAllow' => array('image'),        //Allowed types
+                        'uploadOrder' => array('allow', 'deny'), // White list
                         'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
                     ),
                 ),
@@ -40,6 +42,23 @@ return array(
                         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
                         'path'          => __DIR__.'/../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
                         'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
+                        'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
+                        'attributes' => array(
+                            array( // hide readmes
+                                'pattern' => '/images/',
+                                'read' => false,
+                                'write' => false,
+                                'hidden' => true,
+                                'locked' => false
+                            ),
+                        ),
+                    ),
+                    array(
+                        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
+                        'path'          => __DIR__.'/../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
+                        'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
+                        'uploadAllow' => array('image'),        //Allowed types
+                        'uploadOrder' => array('allow', 'deny'), // White list
                         'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
                     ),
                 ),
