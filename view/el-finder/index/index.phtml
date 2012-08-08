@@ -7,6 +7,11 @@ include 'common.phtml';
         var elf = $('#elfinder').elfinder({
             // lang: 'ru',             // language (OPTIONAL)
             url : '<?php echo $this->connectorPath; ?>',  // connector URL (REQUIRED)
+            getFileCallback : function(file) {
+                window.opener.rcmFileSelected(file);
+                window.close();
+            },
+            resizable: false
         }).elfinder('instance');
     });
 </script>
