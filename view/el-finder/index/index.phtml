@@ -8,7 +8,7 @@ include 'common.phtml';
             // lang: 'ru',             // language (OPTIONAL)
             url : '<?php echo $this->connectorPath; ?>',  // connector URL (REQUIRED)
             getFileCallback : function(file) {
-                window.opener.rcmFileSelected(file);
+                window.opener.elFinderFileSelected(file);
                 window.close();
             },
             resizable: false
