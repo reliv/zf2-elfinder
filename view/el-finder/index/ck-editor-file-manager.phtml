@@ -10,9 +10,13 @@ include 'common.phtml';
         return (match && match.length > 1) ? match[1] : '' ;
     }
 
+    function callBack
+
     $(function(){
         var funcNum = getUrlParam('CKEditorFuncNum');
+        var dialog =  window.opener.CKEDITOR.getDialog();
 
+        alert(dialog);
         var elf = $('#elfinder').elfinder({
             url : '/elfinder/connector',
             getFileCallback : function(file) {
