@@ -19,7 +19,7 @@
  * @link      http://ci.reliv.com/confluence
  */
 
-$elFinder['mounts']['files'] = array(
+$elFinder['mounts'] = array(
     'files' => array (
         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
         'path'          => __DIR__.'/../../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
@@ -58,8 +58,10 @@ return array(
                 ),
             ),
             'defaults' => array(
-                'roots' => $elFinder['mounts']
-            )
+                'roots' => array(
+                    $elFinder['mounts']['files']
+                ),
+            ),
         ),
     ),
 

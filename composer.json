@@ -1,6 +1,6 @@
 {
     "name": "reliv/elfinder",
-    "description": "Zf2 Module wrapper for ElFinder",
+    "description": "Zf2 Module for the ElFinder File Manager.  Includes CKEditor hooks",
     "type": "library",
     "license": "BSD",
     "keywords": [
