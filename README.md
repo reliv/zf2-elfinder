@@ -30,42 +30,101 @@ This package uses composer to install.
   1. Edit your composer.json file from the root directory of your ZF2
      installation.
 
-  2. Locate the following lines
-
-     ```json
-     {
-         "require": {
-                 "php": ">=5.3.3",
-                 "zendframework/zendframework": "dev-master",
-         }
-     }
-     ```
-
-  3. If not already set you'll need to add the following line to your
+  2. If not already set you'll need to add the following line to your
      composer.json file.
      ```json
          "minimum-stability": "dev"
      ```
 
-  4. Add the following to the "require" section of the file
+  3. Add the following to the "require" section of the file
 
      ```json
                  "reliv/elfinder" : "dev-master"
      ```
 
-  5. Run `php composer.phar install` or `php composer.phar update`
+  4. Run `php composer.phar install` or `php composer.phar update`
 
-  6. Once the package is installed you will find this under
+  5. Once the package is installed you will find this under
      `vendor\reliv\elfinder` inside this folder you'll need to copy or symlink
      the public folder for this module to the public folder inside your project.
      By default the module expects to find all public assets under
-     `[zf2 project folder]/public/modules/elfinder`.
+     `[zf2 project folder]/public/modules/elfinder`.  *This path can be adjusted
+     using a configuration flag if needed.
 
-  7. Configure the module for use in your project (see configuration below)
+  6. (Optional) Configure the module for use in your project (see configuration
+     below)
 
-  8. Add ElFinder finder to your view (see: Adding to your project below) and
-     test it out.
+  7. (Optional) Add ElFinder finder to your views that need it.
 
+  8. Test it out and report any bugs or issues back to the project.
+
+  9. Tell others about it.
+
+
+## Adding ElFinder to your project
+
+#### Stand Alone
+If just wanting to test out or use ElFinder as a standalone File Manager,
+simply navigate your browser to the standalone route for ElFinder.  If your
+using the defaults this URL is `http://yourdomain.com/elfinder/standalone`
+
+#### CkEditor
+To add ElFinder to CKEditor simply add the route to the explore window to
+your CkEditors config.  This can be done when your initializing your editor or
+simply by adding this to the CkEditor's global config file.  By default the
+config file is located in CkEditors main folder `path/to/ckeditor/config.js`.
+Add the following lines to CkEditor's config
+
+```javascript
+    filebrowserBrowseUrl : '/elfinder/ckeditor',
+    filebrowserImageBrowseUrl : '/elfinder/ckeditor/images',
+```
+
+Note:  If you've changed the default routes to ElFinder, be sure to point the
+code above to the correct place.
+
+
+Optionally you can customize CkEditors popup window size to fit your needs
+by adding the following line to CkEditors config and adjusting to your taste.
+
+```javascript
+    filebrowserWindowHeight : '400',
+    filebrowserWindowWidth : '800'
+```
+
+#### Using in your own application
+This module can be used as a file uploader or to pick an existing file from
+existing mount points.  In order to do that your program will need to open
+up a popup window that points to the ElFinder's explorer window.  In addition
+to that the calling window MUST have a global javascript function defined.
+
+The following is an example that you might add to your page:
+
+```javascript
+<script type="javascript">
+function elFinderFileSelected(filePath) {
+    // Do something with the file path returned.
+}
+
+function showElFinder(elFinderExplorerPath, windowWidth, windowHeight) {
+    window.open(
+        elFinderExplorerPath,
+        '',
+        'resizable=yes,
+        location=no,
+        menubar=no,
+        scrollbars=yes,
+        status=no,
+        toolbar=no,
+        fullscreen=no,
+        dependent=no,
+        width=windowWidth,
+        height=windowHeight,
+        status'
+    );
+}
+</script>
+```
 
 ## Configuration (Optional)
 
@@ -178,7 +237,7 @@ return array(
         'mounts' => array(
 
             //Set Name for this configuration
-            'images' => array(
+            'myNewFileTypeOrConfigName' => array(
 
                 //Mount point definition goes here.
                 //Minimum config below.  See ElFinders "Connector
@@ -201,12 +260,21 @@ return array(
 );
 ```
 
-Once that's complete, setup your view for ElFinder as described below, with
-one execption.  You need to add your new definition or type to the URL or route
+Once that's complete, setup your view for ElFinder as described above, with
+one exception.  You need to add your new definition or type to the URL or route
 to ElFinder.   If using the example above my new URL this instance of ElFinder
 would be `/elfinder/images`
 
 
+
+
+
+##To Do
+Setup MySql connector to use Zend DB or at least pass in the current DB settings
+to ElFinders MySql connector class.
+
+Setup MySql connector to use Doctrine ORM Module or at least pass in the current
+DB settings when using Doctrine.
 
 
 
