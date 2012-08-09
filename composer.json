@@ -4,7 +4,10 @@
     "type": "library",
     "license": "BSD",
     "keywords": [
-        "elfinder"
+            "elfinder",
+            "zf2",
+            "module",
+            "plugin"
     ],
     "homepage": "https://github.com/reliv/zf2-elfinder",
     "authors": [
@@ -25,7 +28,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "dev-master"
     },
     "minimum-stability": "dev",
     "autoload": {
