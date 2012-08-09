@@ -120,6 +120,7 @@ wiki page titled [Connector configuration options](https://github.com/Studio-42/
 ####Configuring the Zf2 routes
 
 There are four routes defined by default.
+
     `/elfinder` - Main route to open the explorer window which will pass
                   back the url for the file selected to the calling window.
 
