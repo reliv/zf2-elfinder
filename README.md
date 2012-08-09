@@ -69,10 +69,11 @@ simply navigate your browser to the standalone route for ElFinder.  If your
 using the defaults this URL is `http://yourdomain.com/elfinder/standalone`
 
 #### CkEditor
-To add ElFinder to CKEditor simply add the route to the explore window to
-your CkEditors config.  This can be done when your initializing your editor or
+To add ElFinder to CKEditor add the route to the explore window to
+ CkEditors config.  This can be done when your initializing your editor or
 simply by adding this to the CkEditor's global config file.  By default the
 config file is located in CkEditors main folder `path/to/ckeditor/config.js`.
+
 Add the following lines to CkEditor's config
 
 ```javascript
@@ -96,7 +97,7 @@ by adding the following line to CkEditors config and adjusting to your taste.
 This module can be used as a file uploader or to pick an existing file from
 existing mount points.  In order to do that your program will need to open
 up a popup window that points to the ElFinder's explorer window.  In addition
-to that the calling window MUST have a global javascript function defined.
+to that, the calling window MUST have a global javascript function defined.
 
 The following is an example that you might add to your page:
 
