@@ -1,5 +1,5 @@
 {
-    "name": "elfinder/elfinder",
+    "name": "reliv/elfinder",
     "description": "Zf2 Module wrapper for ElFinder",
     "type": "library",
     "license": "BSD",
