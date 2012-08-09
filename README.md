@@ -11,7 +11,7 @@ can be changed via configuration.
 Also included are the needed hooks for CKEditor.  TinyMce may be addressed at
 at later date.
 
-##IMPORTANT
+##IMPORTANT SECURITY NOTICE
 This module DOES NOT provide any user authentication and if used on
 it's own will grant anyone access to your public file system! It is expected
 that through ZF2 you will be setting up your own authentication and user
