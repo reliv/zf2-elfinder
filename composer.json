@@ -29,9 +29,8 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "dev-master"
+        "zendframework/zendframework": "2.0.*"
     },
-    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
             "ElFinder": "src/"
