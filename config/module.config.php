@@ -22,7 +22,7 @@
 $elFinder['mounts'] = array(
     'files' => array (
         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-        'path'          => __DIR__.'/../../../../public/modules/elfinder/files/',         // path to files (REQUIRED)
+        'path'          => __DIR__.'/../../../../public/modules/el-finder/files/',         // path to files (REQUIRED)
         'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
         'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
         'attributes' => array(
@@ -38,7 +38,7 @@ $elFinder['mounts'] = array(
 
     'images' => array(
         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-        'path'          => __DIR__.'/../../../../public/modules/elfinder/files/images/',         // path to files (REQUIRED)
+        'path'          => __DIR__.'/../../../../public/modules/el-finder/files/images/',         // path to files (REQUIRED)
         'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
         'uploadAllow' => array('image'),        //Allowed types
         'uploadOrder' => array('allow', 'deny'), // White list
@@ -50,7 +50,7 @@ return array(
 
     'elfinder' => array(
         'connectorPath' => '/elfinder/connector',  //See routes below.  This must be routeable.
-        'publicFolder' => '/modules/elfinder',
+        'publicFolder' => '/modules/el-finder',
         'mounts' => array(
             'images' => array(
                 'roots' => array(

@@ -81,6 +81,8 @@ class IndexController extends AbstractActionController
             $return['connectorPath'] = $connector;
         }
 
+        $return['elPublicPath'] = $config['publicFolder'];
+
         return $return;
     }
 
