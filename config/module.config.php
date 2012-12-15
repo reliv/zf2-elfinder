@@ -59,7 +59,7 @@ return array(
             ),
             'defaults' => array(
                 'roots' => array(
-                    $elFinder['mounts']['files']
+                    'defaults' => $elFinder['mounts']['files']
                 ),
             ),
         ),
