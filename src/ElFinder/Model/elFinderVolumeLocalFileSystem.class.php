@@ -184,7 +184,10 @@ class elFinderVolumeLocalFileSystem extends elFinderVolumeDriver {
 		if ($initial_slashes) {
 			$path = str_repeat('/', $initial_slashes) . $path;
 		}
-		
+
+        //Added to make paths that start with ssh2.sftp:// work correctly
+        $path = str_replace(':/','://',$path);
+
 		return $path ? $path : '.';
 	}
 	
