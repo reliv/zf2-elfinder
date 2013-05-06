@@ -92,6 +92,7 @@ class IndexController extends AbstractActionController
         include_once __DIR__.'/../Model/elFinderConnector.class.php';
         include_once __DIR__.'/../Model/elFinder.class.php';
         include_once __DIR__.'/../Model/elFinderVolumeDriver.class.php';
+        include_once __DIR__.'/../Model/elFinderVolumeFTP.class.php';
         include_once __DIR__.'/../Model/elFinderVolumeLocalFileSystem.class.php';
 
         $config = $this->getConfig();
