@@ -67,7 +67,11 @@ return array(
 
     'controllers' => array(
         'invokables' => array(
-            'ElFinder\Controller\IndexController'
+            /*
+             * Do not change this invokable name.
+             * Some implementations override it to add security hooks.
+             */
+            'ElFinderIndexController'
             => 'ElFinder\Controller\IndexController',
         ),
     ),
@@ -86,7 +90,7 @@ return array(
                     'route'    => '/elfinder[/:fileType]',
                     'defaults' => array(
                         'controller'
-                        => 'ElFinder\Controller\IndexController',
+                        => 'ElFinderIndexController',
                         'action'     => 'index',
                     ),
                 ),
@@ -97,7 +101,7 @@ return array(
                     'route' => '/elfinder/connector[/:fileType]',
                     'defaults' => array(
                         'controller'
-                        => 'ElFinder\Controller\IndexController',
+                        => 'ElFinderIndexController',
                         'action'     => 'connector',
                     )
                 ),
@@ -108,7 +112,7 @@ return array(
                     'route'    => '/elfinder/standalone[/:fileType]',
                     'defaults' => array(
                         'controller'
-                        => 'ElFinder\Controller\IndexController',
+                        => 'ElFinderIndexController',
                         'action'     => 'standAlone',
                     ),
                 ),
@@ -119,7 +123,7 @@ return array(
                     'route' => '/elfinder/ckeditor[/:fileType]',
                     'defaults' => array(
                         'controller'
-                        => 'ElFinder\Controller\IndexController',
+                        => 'ElFinderIndexController',
                         'action'     => 'ckEditorFileManager',
                     )
                 ),

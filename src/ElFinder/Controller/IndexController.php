@@ -39,6 +39,10 @@ use \Zend\Mvc\Controller\AbstractActionController;
  */
 class IndexController extends AbstractActionController
 {
+    public function preAction(){
+
+    }
+
     /**
      * Index Action - Used when index or root document is called.
      *
@@ -46,6 +50,7 @@ class IndexController extends AbstractActionController
      */
     public function indexAction()
     {
+        $this->preAction();
         return $this->init();
     }
 
@@ -94,6 +99,8 @@ class IndexController extends AbstractActionController
         include_once __DIR__.'/../Model/elFinderVolumeDriver.class.php';
         include_once __DIR__.'/../Model/elFinderVolumeFTP.class.php';
         include_once __DIR__.'/../Model/elFinderVolumeLocalFileSystem.class.php';
+
+        $x=class_exists('');
 
         $config = $this->getConfig();
 
