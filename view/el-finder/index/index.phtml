@@ -7,8 +7,8 @@ include 'common.phtml';
         var elf = $('#elfinder').elfinder({
             // lang: 'ru',             // language (OPTIONAL)
             url : '<?php echo $this->connectorPath; ?>',  // connector URL (REQUIRED)
-            getFileCallback : function(file) {
-                window.opener.elFinderFileSelected(file);
+            getFileCallback : function(fileInfo) {
+                window.opener.elFinderFileSelected(fileInfo['url']);
                 window.close();
             },
             resizable: false
