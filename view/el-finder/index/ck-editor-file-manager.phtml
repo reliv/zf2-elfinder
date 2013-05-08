@@ -15,8 +15,8 @@ include 'common.phtml';
 
         var elf = $('#elfinder').elfinder({
             url : '<?php echo $this->connectorPath; ?>',
-            getFileCallback : function(file) {
-                window.opener.CKEDITOR.tools.callFunction(funcNum, file);
+            getFileCallback : function(fileInfo) {
+                window.opener.CKEDITOR.tools.callFunction(funcNum, fileInfo['url']);
                 window.close();
             },
             resizable: false
