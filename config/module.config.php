@@ -23,7 +23,7 @@ $elFinder['mounts'] = array(
     'files' => array (
         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
         'path'          => __DIR__.'/../../../../public/modules/el-finder/files/',         // path to files (REQUIRED)
-        'URL'           => '/modules/elfinder/files/', // URL to files (REQUIRED)
+        'URL'           => '/modules/el-finder/files/', // URL to files (REQUIRED)
         'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
         'attributes' => array(
             array( // hide readmes
@@ -39,7 +39,7 @@ $elFinder['mounts'] = array(
     'images' => array(
         'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
         'path'          => __DIR__.'/../../../../public/modules/el-finder/files/images/',         // path to files (REQUIRED)
-        'URL'           => '/modules/elfinder/files/images/', // URL to files (REQUIRED)
+        'URL'           => '/modules/el-finder/files/images/', // URL to files (REQUIRED)
         'uploadAllow' => array('image'),        //Allowed types
         'uploadOrder' => array('allow', 'deny'), // White list
         'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
@@ -49,6 +49,8 @@ $elFinder['mounts'] = array(
 return array(
 
     'elfinder' => array(
+        'useGoogleJquery' => true,
+        'disableLayouts' => true,
         'connectorPath' => '/elfinder/connector',  //See routes below.  This must be routeable.
         'publicFolder' => '/modules/el-finder',
         'mounts' => array(

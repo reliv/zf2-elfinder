@@ -48,17 +48,19 @@ This package uses composer to install.
      `vendor\reliv\elfinder` inside this folder you'll need to copy or symlink
      the public folder for this module to the public folder inside your project.
      By default the module expects to find all public assets under
-     `[zf2 project folder]/public/modules/elfinder`.  *This path can be adjusted
+     `[zf2 project folder]/public/modules/el-finder`.  *This path can be adjusted
      using a configuration flag if needed.
 
-  6. (Optional) Configure the module for use in your project (see configuration
+  6. Add 'ElFinder' to your list of modules in `[zf2 project folder]/config/application.config.php`
+
+  7. (Optional) Configure the module for use in your project (see configuration
      below)
 
-  7. (Optional) Add ElFinder finder to your views that need it.
+  8. (Optional) Add ElFinder finder to your views that need it.
 
-  8. Test it out and report any bugs or issues back to the project.
+  9. Test it out and report any bugs or issues back to the project.
 
-  9. Tell others about it.
+  10. Tell others about it.
 
 
 ## Adding ElFinder to your project
@@ -138,15 +140,15 @@ settings based on your needs.
 This module comes with some pre-defined configuration to get you up and running
 as quickly as possible.  *Please Note: To use default configuration the contents
 of the public folder for this modules must be located in
-`[project home]/public/modules/elfinder`.  In other words `modules/elfinder`
+`[project home]/public/modules/el-finder`.  In other words `modules/el-finder`
 must be publicly accessible.
 
 
 ####Configuring Mount Points
 
 By default the system sets up two default mount points for you,
-`[project home]/public/modules/elfinder/files` and
-`[project home]/public/modules/elfinder/files/images` however there is no
+`[project home]/public/modules/el-finder/files` and
+`[project home]/public/modules/el-finder/files/images` however there is no
 limit to how many mount points you can define.
 
 To add a new mount point simply open up your application config or projects

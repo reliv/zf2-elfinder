@@ -20,6 +20,7 @@
 namespace ElFinder\Controller;
 
 use \Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
 /**
  * Index Controller for the entire application
@@ -87,8 +88,15 @@ class IndexController extends AbstractActionController
         }
 
         $return['elPublicPath'] = $config['publicFolder'];
+        $return['useGoogleJquery'] = $config['useGoogleJquery'];
 
-        return $return;
+        $view = new ViewModel($return);
+
+        if (!empty($config['disableLayouts']) && $config['disableLayouts'] === true) {
+            $this->layout()->setTemplate('el-finder/index/blank-layout');
+        }
+
+        return $view;
     }
 
     public function connectorAction()
