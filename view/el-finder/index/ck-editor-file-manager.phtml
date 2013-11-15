@@ -14,7 +14,7 @@ include 'common.phtml';
         var funcNum = getUrlParam('CKEditorFuncNum');
 
         var elf = $('#elfinder').elfinder({
-            url : '<?php echo $this->connectorPath; ?>',
+            url : '<?=  $this->connectorPath; ?>',
             getFileCallback : function(fileInfo) {
                 window.opener.CKEDITOR.tools.callFunction(funcNum, fileInfo['url']);
                 window.close();
