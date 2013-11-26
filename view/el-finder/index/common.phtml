@@ -20,15 +20,15 @@ if (!empty($this->useGoogleJquery) && $this->useGoogleJquery === true) {
     );
 } else {
     $this->headScript()->appendFile(
-        '/modules/rcm/vendor/jquery/js/jquery.js', 'text/javascript'
+        '/modules/rcm/vendor/jquery-ui/js/jquery-1.9.1.js', 'text/javascript'
     );
 
     $this->headScript()->appendFile(
-        '/modules/rcm/vendor/jquery/js/jquery-ui-1.9.1.custom.min.js', 'text/javascript'
+        '/modules/rcm/vendor/jquery-ui/js/jquery-ui-1.10.3.custom.min.js', 'text/javascript'
     );
 
     $this->headLink()->appendStylesheet(
-        '/modules/rcm/vendor/jquery/css/smoothness/jquery-ui-1.9.1.custom.css'
+        '/modules/rcm/vendor/jquery-ui/css/smoothness/jquery-ui-1.10.3.custom.min.css'
     );
 }
 
