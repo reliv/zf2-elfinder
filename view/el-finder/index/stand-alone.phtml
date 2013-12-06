@@ -17,7 +17,7 @@ include 'common.phtml';
 
         var $window = $(window);
         $window.resize(function(){
-            var win_height = $window.height();
+            var win_height = $window.height() - 20;
             if( thisElFinder.height() != win_height ){
                 thisElFinder.height(win_height).resize();
             }
