@@ -21,6 +21,7 @@ see if that works for you.
 
 
 ## Requirements
+[PHP 5.4+](http://php.net/)
 [Zend Framework 2](http://www.github.com/zendframework/zf2)
 
 ## Installation
