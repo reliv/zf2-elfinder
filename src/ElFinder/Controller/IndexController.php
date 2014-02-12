@@ -10,7 +10,6 @@
  * LICENSE: No License yet
  *
  * @category  Reliv
- * @package   Main\Application\Controllers\Index
  * @author    Unkown <unknown@relivinc.com>
  * @copyright 2012 Reliv International
  * @license   License.txt New BSD License
@@ -29,7 +28,6 @@ use Zend\View\Model\ViewModel;
  * modification.
  *
  * @category  Reliv
- * @package   Main\Application\Controllers\Index
  * @author    Westin Shafer <wshafer@relivinc.com>
  * @copyright 2012 Reliv International
  * @license   License.txt New BSD License

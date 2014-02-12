@@ -15,7 +15,6 @@
  * PHP version 5.3
  *
  * @category  Reliv
- * @package   Common\Exception
  * @author    Zend <support@zend.com>
  * @copyright 2012 Zend Technologies USA Inc.
  * @license   http://framework.zend.com/license/new-bsd     New BSD License
@@ -28,7 +27,6 @@ namespace ElFinder\Exception;
  * Exception Interface for Reliv Common
  * 
  * @category  Reliv
- * @package   Common\Exception
  * @author    Zend <support@zend.com>
  * @copyright 2012 Zend Technologies USA Inc. 
  * @license   http://framework.zend.com/license/new-bsd     New BSD License

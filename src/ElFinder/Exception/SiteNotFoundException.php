@@ -9,7 +9,6 @@
  * LICENSE: No License yet
  *
  * @category  Reliv
- * @package   Common\Exception
  * @author    Rod McNew <rmcnew@relivinc.com>
  * @copyright 2012 Reliv International
  * @license   License.txt New BSD License
@@ -23,7 +22,6 @@ namespace ElFinder\Exception;
  * Is thrown when a language is not found
  *
  * @category  Reliv
- * @package   Common\Exception
  * @author    Rod McNew <rmcnew@relivinc.com>
  * @copyright 2012 Reliv International
  * @license   License.txt New BSD License

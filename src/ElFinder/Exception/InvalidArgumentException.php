@@ -10,7 +10,6 @@
  * LICENSE: No License yet
  *
  * @category  Reliv
- * @package   Common\Exception
  * @author    Westin Shafer <wshafer@relivinc.com>
  * @copyright 2012 Reliv International
  * @license   License.txt New BSD License
@@ -25,7 +24,6 @@ namespace ElFinder\Exception;
  * from with in the Reliv Common Module
  *
  * @category  Reliv
- * @package   Common\Exception
  * @author    Westin Shafer <wshafer@relivinc.com>
  * @copyright 2012 Reliv International
  * @license   License.txt New BSD License
