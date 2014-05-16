@@ -8,27 +8,15 @@
 
 if (!empty($this->useGoogleJquery) && $this->useGoogleJquery === true) {
     $this->headScript()->appendFile(
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js', 'text/javascript'
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 'text/javascript'
     );
 
     $this->headScript()->appendFile(
-        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js', 'text/javascript'
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js', 'text/javascript'
     );
 
     $this->headLink()->appendStylesheet(
-        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css'
-    );
-} else {
-    $this->headScript()->appendFile(
-        '/modules/rcm/vendor/jquery-ui/js/jquery-1.9.1.js', 'text/javascript'
-    );
-
-    $this->headScript()->appendFile(
-        '/modules/rcm/vendor/jquery-ui/js/jquery-ui-1.10.3.custom.min.js', 'text/javascript'
-    );
-
-    $this->headLink()->appendStylesheet(
-        '/modules/rcm/vendor/jquery-ui/css/smoothness/jquery-ui-1.10.3.custom.min.css'
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css'
     );
 }
 

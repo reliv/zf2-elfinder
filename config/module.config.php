@@ -72,7 +72,7 @@ return array(
              * Some implementations override it to add security hooks.
              */
             'ElFinderIndexController'
-            => 'ElFinder\Controller\IndexController',
+                => 'ElFinder\Controller\IndexController',
         ),
     ),
 
