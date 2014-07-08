@@ -8,11 +8,13 @@
 
 if (!empty($this->useGoogleJquery) && $this->useGoogleJquery === true) {
     $this->headScript()->appendFile(
-        'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', 'text/javascript'
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+        'text/javascript'
     );
 
     $this->headScript()->appendFile(
-        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js', 'text/javascript'
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js',
+        'text/javascript'
     );
 
     $this->headLink()->appendStylesheet(
@@ -21,7 +23,8 @@ if (!empty($this->useGoogleJquery) && $this->useGoogleJquery === true) {
 }
 
 $this->headScript()->appendFile(
-    $this->basePath() . $this->elPublicPath . '/js/elfinder.min.js', 'text/javascript'
+    $this->basePath() . $this->elPublicPath . '/js/elfinder.min.js',
+    'text/javascript'
 );
 
 $this->headLink()->appendStylesheet(

@@ -1,23 +1,30 @@
-<?=  $this->doctype(); ?>
+<?= $this->doctype(); ?>
 
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?=  $this->headTitle('ElFinder')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?=
+    $this->headTitle('ElFinder')->setSeparator(' - ')->setAutoEscape(
+        false
+    ) ?>
 
-    <?=  $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+    <?=
+    $this->headMeta()->appendName(
+        'viewport',
+        'width=device-width, initial-scale=1.0'
+    ) ?>
 
     <!-- Le styles -->
-    <?=  $this->headLink(); ?>
+    <?= $this->headLink(); ?>
 
     <!-- Scripts -->
-    <?=  $this->headScript(); ?>
+    <?= $this->headScript(); ?>
 
 </head>
 <body>
 <div class="container">
-    <?=  $this->content; ?>
+    <?= $this->content; ?>
 </div>
-<?=  $this->inlineScript() ?>
+<?= $this->inlineScript() ?>
 </body>
 </html>

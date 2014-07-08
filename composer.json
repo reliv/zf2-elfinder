@@ -4,10 +4,10 @@
     "type": "library",
     "license": "BSD",
     "keywords": [
-            "elfinder",
-            "zf2",
-            "module",
-            "plugin"
+        "elfinder",
+        "zf2",
+        "module",
+        "plugin"
     ],
     "homepage": "https://github.com/reliv/zf2-elfinder",
     "authors": [

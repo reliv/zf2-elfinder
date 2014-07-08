@@ -18,11 +18,15 @@
  */
 
 $elFinder['mounts'] = array(
-    'files' => array (
-        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-        'path'          => __DIR__.'/../../../../public/modules/el-finder/files/',         // path to files (REQUIRED)
-        'URL'           => '/modules/el-finder/files/', // URL to files (REQUIRED)
-        'accessControl' => 'access',             // disable and hide dot starting files (OPTIONAL)
+    'files' => array(
+        'driver' => 'LocalFileSystem',
+        // driver for accessing file system (REQUIRED)
+        'path' => __DIR__ . '/../../../../public/modules/el-finder/files/',
+        // path to files (REQUIRED)
+        'URL' => '/modules/el-finder/files/',
+        // URL to files (REQUIRED)
+        'accessControl' => 'access',
+        // disable and hide dot starting files (OPTIONAL)
         'attributes' => array(
             array( // hide readmes
                 'pattern' => '/images/',
@@ -33,14 +37,20 @@ $elFinder['mounts'] = array(
             ),
         ),
     ),
-
     'images' => array(
-        'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
-        'path'          => __DIR__.'/../../../../public/modules/el-finder/files/images/',         // path to files (REQUIRED)
-        'URL'           => '/modules/el-finder/files/images/', // URL to files (REQUIRED)
-        'uploadAllow' => array('image'),        //Allowed types
-        'uploadOrder' => array('allow', 'deny'), // White list
-        'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
+        'driver' => 'LocalFileSystem',
+        // driver for accessing file system (REQUIRED)
+        'path' =>
+            __DIR__ . '/../../../../public/modules/el-finder/files/images/',
+        // path to files (REQUIRED)
+        'URL' => '/modules/el-finder/files/images/',
+        // URL to files (REQUIRED)
+        'uploadAllow' => array('image'),
+        //Allowed types
+        'uploadOrder' => array('allow', 'deny'),
+        // White list
+        'accessControl' => 'access'
+        // disable and hide dot starting files (OPTIONAL)
     ),
 );
 
@@ -49,7 +59,8 @@ return array(
     'elfinder' => array(
         'useGoogleJquery' => true,
         'disableLayouts' => true,
-        'connectorPath' => '/elfinder/connector',  //See routes below.  This must be routeable.
+        'connectorPath' => '/elfinder/connector',
+        //See routes below.  This must be routeable.
         'publicFolder' => '/modules/el-finder',
         'mounts' => array(
             'images' => array(
@@ -64,7 +75,6 @@ return array(
             ),
         ),
     ),
-
     'controllers' => array(
         'invokables' => array(
             /*
@@ -72,59 +82,57 @@ return array(
              * Some implementations override it to add security hooks.
              */
             'ElFinderIndexController'
-                => 'ElFinder\Controller\IndexController',
+            => 'ElFinder\Controller\IndexController',
         ),
     ),
-
     'view_manager' => array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
     ),
-    
     'router' => array(
-        'routes' => array (
+        'routes' => array(
             'elFinder' => array(
                 'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
-                    'route'    => '/elfinder[/:fileType]',
+                    'route' => '/elfinder[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinderIndexController',
-                        'action'     => 'index',
+                        'action' => 'index',
                     ),
                 ),
             ),
             'elFinderConnector' => array(
-                'type'    => 'Zend\Mvc\Router\Http\Segment',
+                'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
                     'route' => '/elfinder/connector[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinderIndexController',
-                        'action'     => 'connector',
+                        'action' => 'connector',
                     )
                 ),
             ),
             'elFinderStandAlone' => array(
                 'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
-                    'route'    => '/elfinder/standalone[/:fileType]',
+                    'route' => '/elfinder/standalone[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinderIndexController',
-                        'action'     => 'standAlone',
+                        'action' => 'standAlone',
                     ),
                 ),
             ),
             'elFinderCkEditor' => array(
-                'type'    => 'Zend\Mvc\Router\Http\Segment',
+                'type' => 'Zend\Mvc\Router\Http\Segment',
                 'options' => array(
                     'route' => '/elfinder/ckeditor[/:fileType]',
                     'defaults' => array(
                         'controller'
                         => 'ElFinderIndexController',
-                        'action'     => 'ckEditorFileManager',
+                        'action' => 'ckEditorFileManager',
                     )
                 ),
             ),
