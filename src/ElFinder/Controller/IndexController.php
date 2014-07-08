@@ -17,7 +17,7 @@
  */
 namespace ElFinder\Controller;
 
-use \Zend\Mvc\Controller\AbstractActionController;
+use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 /**
@@ -36,7 +36,8 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends AbstractActionController
 {
-    public function preAction(){
+    public function preAction()
+    {
 
     }
 
@@ -78,7 +79,7 @@ class IndexController extends AbstractActionController
         }
 
         if (!empty($type)) {
-            $return['connectorPath'] = $connector.'/'.$type;
+            $return['connectorPath'] = $connector . '/' . $type;
         } else {
             $return['connectorPath'] = $connector;
         }
@@ -88,7 +89,9 @@ class IndexController extends AbstractActionController
 
         $view = new ViewModel($return);
 
-        if (!empty($config['disableLayouts']) && $config['disableLayouts'] === true) {
+        if (!empty($config['disableLayouts'])
+            && $config['disableLayouts'] === true
+        ) {
             $this->layout()->setTemplate('el-finder/index/blank-layout');
         }
 
@@ -98,13 +101,14 @@ class IndexController extends AbstractActionController
     public function connectorAction()
     {
         error_reporting(0);
-        include_once __DIR__.'/../Model/elFinderConnector.class.php';
-        include_once __DIR__.'/../Model/elFinder.class.php';
-        include_once __DIR__.'/../Model/elFinderVolumeDriver.class.php';
-        include_once __DIR__.'/../Model/elFinderVolumeFTP.class.php';
-        include_once __DIR__.'/../Model/elFinderVolumeLocalFileSystem.class.php';
+        include_once __DIR__ . '/../Model/elFinderConnector.class.php';
+        include_once __DIR__ . '/../Model/elFinder.class.php';
+        include_once __DIR__ . '/../Model/elFinderVolumeDriver.class.php';
+        include_once __DIR__ . '/../Model/elFinderVolumeFTP.class.php';
+        include_once
+            __DIR__ . '/../Model/elFinderVolumeLocalFileSystem.class.php';
 
-        $x=class_exists('');
+        $x = class_exists('');
 
         $config = $this->getConfig();
 
@@ -116,22 +120,26 @@ class IndexController extends AbstractActionController
             $mount = $config['mounts']['defaults'];
         }
 
-        foreach($mount['roots'] as $k => $v) {
-            $mount['roots'][$k]['accessControl'] = array($this,'access');
+        foreach ($mount['roots'] as $k => $v) {
+            $mount['roots'][$k]['accessControl'] = array($this, 'access');
         }
 
         $connector = new \elFinderConnector(new \elFinder($mount));
         $connector->run();
     }
 
-    public function access($attr, $path, $data, $volume) {
-        return strpos(basename($path), '.') === 0       // if file/folder begins with '.' (dot)
-            ? !($attr == 'read' || $attr == 'write')    // set read+write to false, other (locked+hidden) set to true
-            :  null;                                    // else elFinder decide it itself
+    public function access($attr, $path, $data, $volume)
+    {
+        return strpos(basename($path), '.') === 0
+            // if file/folder begins with '.' (dot)
+            ? !($attr == 'read' || $attr == 'write')
+            // set read+write to false, other (locked+hidden) set to true
+            : null; // else elFinder decide it itself
     }
 
 
-    public function getConfig() {
+    public function getConfig()
+    {
         $config = $this->getServiceLocator()->get('config');
 
 
