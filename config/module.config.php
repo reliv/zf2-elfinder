@@ -136,6 +136,17 @@ return array(
                     )
                 ),
             ),
+            'elFinderTinyMce' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route' => '/elfinder/tinymce[/:fileType]',
+                    'defaults' => array(
+                        'controller'
+                        => 'ElFinderIndexController',
+                        'action' => 'tinymceFileManager',
+                    )
+                ),
+            ),
         ),
     ),
 

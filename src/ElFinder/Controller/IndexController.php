@@ -52,7 +52,23 @@ class IndexController extends AbstractActionController
         return $this->init();
     }
 
+    /**
+     * ckEditorFileManagerAction
+     *
+     * @return ViewModel
+     */
     public function ckEditorFileManagerAction()
+    {
+        return $this->init();
+    }
+
+    /**
+     * Gets view for TinyMce based selector
+     * tinymceFileManagerAction
+     *
+     * @return ViewModel
+     */
+    public function tinymceFileManagerAction()
     {
         return $this->init();
     }
