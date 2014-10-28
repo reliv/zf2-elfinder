@@ -8,8 +8,7 @@ the following path `http://yourdomain.com/elfinder` and the connector is
 located by default at `http://yourdomain.com/elfinder/connector`.  All of this
 can be changed via configuration.
 
-Also included are the needed hooks for CKEditor.  TinyMce may be addressed at
-at later date.
+Also included are the needed hooks for CKEditor and TinyMce.
 
 ##IMPORTANT SECURITY NOTICE
 This module DOES NOT provide any user authentication and if used on
@@ -95,6 +94,21 @@ by adding the following line to CkEditors config and adjusting to your taste.
     filebrowserWindowHeight : '400',
     filebrowserWindowWidth : '800'
 ```
+
+#### TinyMce
+To add ElFinder to TinyMce copy the 'public/tinymce/plugins/elfinder'
+to you TinyMce instance plugins folder.
+
+Register the plugin with TinyMce.
+
+```javascript
+    tinymce.init({
+        ....
+        plugins: 'elfinder',
+        ....
+    });
+```
+
 
 #### Using in your own application
 This module can be used as a file uploader or to pick an existing file from
