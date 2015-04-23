@@ -39,7 +39,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Reliv\\Elfinder\\": "src"
+            "Reliv\\ElFinder": "src"
         }
     }
 }

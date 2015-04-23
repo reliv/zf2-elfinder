@@ -21,7 +21,7 @@ $elFinder['mounts'] = array(
     'files' => array(
         'driver' => 'LocalFileSystem',
         // driver for accessing file system (REQUIRED)
-        'path' => __DIR__ . '/../../../../public/modules/el-finder/files/',
+        'path' => __DIR__ . '/../public/modules/el-finder/files/',
         // path to files (REQUIRED)
         'URL' => '/modules/el-finder/files/',
         // URL to files (REQUIRED)
@@ -38,19 +38,24 @@ $elFinder['mounts'] = array(
         ),
     ),
     'images' => array(
-        'driver' => 'LocalFileSystem',
         // driver for accessing file system (REQUIRED)
-        'path' =>
-            __DIR__ . '/../../../../public/modules/el-finder/files/images/',
+        'driver' => 'LocalFileSystem',
+
         // path to files (REQUIRED)
-        'URL' => '/modules/el-finder/files/images/',
+        'path' =>
+            __DIR__ . '/../public/modules/el-finder/files/images/',
+
         // URL to files (REQUIRED)
-        'uploadAllow' => array('image'),
+        'URL' => '/modules/el-finder/files/images/',
+
         //Allowed types
-        'uploadOrder' => array('allow', 'deny'),
+        'uploadAllow' => array('image'),
+
         // White list
-        'accessControl' => 'access'
+        'uploadOrder' => array('allow', 'deny'),
+
         // disable and hide dot starting files (OPTIONAL)
+        'accessControl' => 'access'
     ),
 );
 
@@ -75,21 +80,17 @@ return array(
             ),
         ),
     ),
+
     'controllers' => array(
         'invokables' => array(
-            /*
-             * Do not change this invokable name.
-             * Some implementations override it to add security hooks.
-             */
-            'ElFinderIndexController'
-            => 'ElFinder\Controller\IndexController',
+            'ElFinderIndexController' => 'ElFinder\Controller\IndexController',
         ),
     ),
+
     'view_manager' => array(
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
+        'template_path_stack' => array(__DIR__ . '/../view',),
     ),
+
     'router' => array(
         'routes' => array(
             'elFinder' => array(
