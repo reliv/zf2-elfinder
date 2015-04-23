@@ -83,7 +83,7 @@ return array(
 
     'controllers' => array(
         'invokables' => array(
-            'ElFinderIndexController' => 'ElFinder\Controller\IndexController',
+            'ElFinderIndexController' => 'Reliv\ElFinder\Controller\IndexController',
         ),
     ),
 
