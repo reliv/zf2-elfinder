@@ -30,7 +30,8 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*",
-        "studio-42/elfinder": "2.*@dev"
+        "studio-42/elfinder": "2.*@dev",
+        "rwoverdijk/assetmanager": "1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
