@@ -1,34 +1,32 @@
-<?php
-include 'common.phtml';
-?>
+<?php include 'common.phtml'; ?>
 
-<script type="text/javascript">
-    $(function () {
-        var $window = $(window);
-        var init_win_height = $window.height() - 20;
+<?php $this->headScript()->captureStart() ?>
+$(function () {
+    var $window = jQuery(window);
+    var init_win_height = $window.height() - 20;
 
-        var thisElFinder = $('#elfinder').elfinder({
-            // lang: 'ru',             // language (OPTIONAL)
-            url: '<?=  $this->connectorPath; ?>',  // connector URL (REQUIRED)
-            getFileCallback: function (fileInfo) {
-                window.opener.elFinderFileSelected(fileInfo['url']);
-                window.close();
-            },
-            resizable: false,
-            height: init_win_height
-        });
-
-        var elf = thisElFinder.elfinder('instance');
-
-        var $window = $(window);
-        $window.resize(function () {
-            var win_height = $window.height() - 20;
-            if (thisElFinder.height() != win_height) {
-                thisElFinder.height(win_height).resize();
-            }
-        });
+    var thisElFinder = jQuery('#elfinder').elfinder({
+        // lang: 'ru',             // language (OPTIONAL)
+        url: '<?=  $this->connectorPath; ?>',  // connector URL (REQUIRED)
+        getFileCallback: function (fileInfo) {
+            window.opener.elFinderFileSelected(fileInfo['url']);
+            window.close();
+        },
+        resizable: false,
+        height: init_win_height
     });
-</script>
+
+    var elf = thisElFinder.elfinder('instance');
+
+    var $window = $(window);
+    $window.resize(function () {
+        var win_height = $window.height() - 20;
+        if (thisElFinder.height() != win_height) {
+            thisElFinder.height(win_height).resize();
+        }
+    });
+});
+<?php $this->headScript()->captureEnd() ?>
 
 <div id="elfinder"></div>
 

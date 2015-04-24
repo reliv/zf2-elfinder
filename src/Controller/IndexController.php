@@ -44,7 +44,9 @@ class IndexController extends AbstractActionController
      */
     public function indexAction()
     {
-        return $this->init();
+        $view = $this->init();
+        $view->setTemplate('el-finder/index/index.phtml');
+        return $view;
     }
 
     /**
@@ -54,7 +56,9 @@ class IndexController extends AbstractActionController
      */
     public function ckEditorFileManagerAction()
     {
-        return $this->init();
+        $view = $this->init();
+        $view->setTemplate('el-finder/index/ck-editor-file-manager.phtml');
+        return $view;
     }
 
     /**
@@ -65,7 +69,9 @@ class IndexController extends AbstractActionController
      */
     public function tinymceFileManagerAction()
     {
-        return $this->init();
+        $view = $this->init();
+        $view->setTemplate('el-finder/index/tinymce-file-manager.phtml');
+        return $view;
     }
 
     public function standAloneAction()

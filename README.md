@@ -97,7 +97,7 @@ by adding the following line to CkEditors config and adjusting to your taste.
 
 #### TinyMce
 To add ElFinder to TinyMce copy the 'public/tinymce/plugins/elfinder'
-to you TinyMce instance plugins folder.
+to your TinyMce instance plugins folder.
 
 Register the plugin with TinyMce.
 

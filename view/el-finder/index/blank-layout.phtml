@@ -3,23 +3,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?=
-    $this->headTitle('ElFinder')->setSeparator(' - ')->setAutoEscape(
-        false
-    ) ?>
-
-    <?=
-    $this->headMeta()->appendName(
-        'viewport',
-        'width=device-width, initial-scale=1.0'
-    ) ?>
-
-    <!-- Le styles -->
+    <?= $this->headTitle('ElFinder')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?= $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
     <?= $this->headLink(); ?>
-
-    <!-- Scripts -->
     <?= $this->headScript(); ?>
-
 </head>
 <body>
 <div class="container">
