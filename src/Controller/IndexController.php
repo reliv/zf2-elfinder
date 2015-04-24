@@ -70,7 +70,9 @@ class IndexController extends AbstractActionController
 
     public function standAloneAction()
     {
-        return $this->init();
+        $view = $this->init();
+        $view->setTemplate('el-finder/index/stand-alone.phtml');
+        return $view;
     }
 
     public function init()
@@ -86,7 +88,6 @@ class IndexController extends AbstractActionController
         }
 
         $config = $this->getConfig();
-        $viewParams['elPublicPath'] = $config['publicFolder'];
         $viewParams['useGoogleJquery'] = $config['useGoogleJquery'];
 
         $view = new ViewModel($viewParams);

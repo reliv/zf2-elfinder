@@ -23,15 +23,15 @@ if (!empty($this->useGoogleJquery) && $this->useGoogleJquery === true) {
 }
 
 $this->headScript()->appendFile(
-    $this->basePath() . $this->elPublicPath . '/js/elfinder.min.js',
+    '/modules/el-finder/js/elfinder.full.js',
     'text/javascript'
 );
 
 $this->headLink()->appendStylesheet(
-    $this->basePath() . $this->elPublicPath . '/css/elfinder.min.css'
+   '/modules/el-finder/css/elfinder.full.css'
 );
 
-$this->headLink()->appendStylesheet(
-    $this->basePath() . $this->elPublicPath . '/css/theme.css'
-);
+//$this->headLink()->appendStylesheet(
+//    $this->basePath() . $this->elPublicPath . '/css/theme.css'
+//);
 
