@@ -19,6 +19,8 @@ But if you need authentication you may want to check out the ZfUser module and
 see if that works for you.
 
 ## Change Log
+v2.0.0
+  * Removed the @dev dependancy on ElFinder.
 v2.0.0-alpha
   * Added composer definition to use upstream ElFinder package instead of using our own.
   * Added [Asset Manager](https://github.com/RWOverdijk/AssetManager) module as a
@@ -36,31 +38,19 @@ Please report any bugs you find.
 This package uses composer to install.
 
 #### Installation steps
-  1. Edit your composer.json file from the root directory of your ZF2
-     installation.
 
-  2. Add the following to the "require" section of the file.
+  1. Install the composer package: `composer require reliv/elfinder`
 
-     ```json
-                 "studio-42/elfinder": "2.*@dev",
-                 "reliv/elfinder" : "2.0.0-alpha"
-     ```
-     
-     Note:  As of this writing ElFinder's composer package is still a development package.  You must make sure
-     that the ElFinder definition is defined in your root composer.json file to be correctly installed. 
+  2. Add 'Reliv\ElFinder' to your list of modules in `[zf2 project folder]/config/application.config.php`
 
-  3. Run `php composer.phar install` or `php composer.phar update`
-
-  4. Add 'Reliv\ElFinder' to your list of modules in `[zf2 project folder]/config/application.config.php`
-
-  5. (Optional) Configure the module for use in your project (see configuration
+  3. (Optional) Configure the module for use in your project (see configuration
      below)
 
-  6. (Optional) Add ElFinder finder to your views that need it.
+  4. (Optional) Add ElFinder finder to your views that need it.
 
-  7. Test it out and report any bugs or issues back to the project.
+  5. Test it out and report any bugs or issues back to the project.
 
-  8. Tell others about it.
+  6. Tell others about it.
 
 
 ## Adding ElFinder to your project
