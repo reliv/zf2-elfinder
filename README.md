@@ -41,18 +41,16 @@ This package uses composer to install.
 
   1. Install the composer package: `composer require reliv/elfinder`
 
-  2. Run `php composer.phar install` or `php composer.phar update`
+  2. Add 'Reliv\ElFinder' to your list of modules in `[zf2 project folder]/config/application.config.php`
 
-  3. Add 'Reliv\ElFinder' to your list of modules in `[zf2 project folder]/config/application.config.php`
-
-  4. (Optional) Configure the module for use in your project (see configuration
+  3. (Optional) Configure the module for use in your project (see configuration
      below)
 
-  5. (Optional) Add ElFinder finder to your views that need it.
+  4. (Optional) Add ElFinder finder to your views that need it.
 
-  6. Test it out and report any bugs or issues back to the project.
+  5. Test it out and report any bugs or issues back to the project.
 
-  7. Tell others about it.
+  6. Tell others about it.
 
 
 ## Adding ElFinder to your project
