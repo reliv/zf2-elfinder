@@ -19,8 +19,13 @@ But if you need authentication you may want to check out the ZfUser module and
 see if that works for you.
 
 ## Change Log
-v2.0.0
+v2.0.2
+  * Fixed BC break from upstream.  Js and Css are now already merged
+  * Added pulling configs from the Service Locator for more complex configurations.  See docs below
+
+v2.0.1
   * Removed the @dev dependancy on ElFinder.
+
 v2.0.0-alpha
   * Added composer definition to use upstream ElFinder package instead of using our own.
   * Added [Asset Manager](https://github.com/RWOverdijk/AssetManager) module as a
@@ -179,9 +184,35 @@ return array(
     ),
 );
 ```
-
 For a full list of all mount point configuration settings please see ElFinders
-wiki page titled [Connector configuration options](https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options)
+wiki page titled [Connector configuration options](https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options)\
+
+
+####Configuration Services
+
+Some of the newer volume drivers require some complex configuration that can't be cached.  As such you can provide
+your own Service Config that will be pulled out of the Service Manager instead of the config array.
+
+These configuration services MUST implement the Reliv\ElFinder\Config\ConfigInterface and return a valid
+ElFinder mount config as seen in the above example.  In addition this service must be able to be initiated from
+the Service Manager, so it will need to be defined there as well.
+
+To define a Configuration Service for a mount point, here's a modified version of the config above.
+
+```php
+return array(
+    'elfinder' => array(
+        'mounts' => array(
+            'defaults' => array(
+                'myNewMountPoint' => array (
+                    //Service Config goes here
+                    'configService' => 'MyServiceHere'
+                ),
+            ),
+        ),
+    ),
+);
+```
 
 
 ####Configuring the Zf2 routes
