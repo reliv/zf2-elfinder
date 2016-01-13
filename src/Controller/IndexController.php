@@ -147,7 +147,7 @@ class IndexController extends AbstractActionController
         return $connectorPath;
     }
 
-    protected function getMountConfig($type=null)
+    protected function getMountConfig($type = null)
     {
         $config = $this->getConfig();
         $mount = $config['mounts']['defaults'];
