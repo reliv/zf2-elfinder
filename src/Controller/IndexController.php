@@ -17,7 +17,9 @@
  */
 namespace Reliv\ElFinder\Controller;
 
+use Reliv\ElFinder\Config\ConfigInterface;
 use Reliv\ElFinder\Exception\RuntimeException;
+use Reliv\ElFinder\Exception\InvalidArgumentException;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -109,17 +111,9 @@ class IndexController extends AbstractActionController
     {
         error_reporting(0);
 
-        $config = $this->getConfig();
-        $mount = $config['mounts']['defaults'];
+        $type = $this->getEvent()->getRouteMatch()->getParam('fileType', null);
 
-        $type = $this->getEvent()->getRouteMatch()->getParam('fileType');
-        if (!empty($type) && !empty($config['mounts'][$type])) {
-            $mount = $config['mounts'][$type];
-        }
-
-        foreach ($mount['roots'] as $k => $v) {
-            $mount['roots'][$k]['accessControl'] = array($this, 'access');
-        }
+        $mount = $this->getMountConfig($type);
 
         $connector = new \elFinderConnector(new \elFinder($mount));
         $connector->run();
@@ -151,5 +145,38 @@ class IndexController extends AbstractActionController
         }
 
         return $connectorPath;
+    }
+
+    protected function getMountConfig($type=null)
+    {
+        $config = $this->getConfig();
+        $mount = $config['mounts']['defaults'];
+
+        if (!empty($type) && !empty($config['mounts'][$type])) {
+            $mount = $config['mounts'][$type];
+        }
+
+        return $this->getElFinderConfig($mount);
+    }
+
+    protected function getElFinderConfig($mount)
+    {
+        foreach ($mount['roots'] as $k => $v) {
+            if (isset($v['configService'])) {
+                $configService = $this->getServiceLocator()->get($v['configService']);
+
+                if (!$configService instanceof ConfigInterface) {
+                    throw new InvalidArgumentException(
+                        $k.' configuration error: Service Configs must be an instance of the ConfigInterface.'
+                    );
+                }
+
+                $mount['roots'][$k] = $configService->getConfig();
+            }
+
+            $mount['roots'][$k]['accessControl'] = array($this, 'access');
+        }
+
+        return $mount;
     }
 }

@@ -153,45 +153,6 @@ return array(
 
     'asset_manager' => array(
         'resolver_configs' => array(
-            'collections' => array(
-                'modules/el-finder/js/elfinder.full.js' => array_merge(
-                        array(
-                            'modules/el-finder/js/elFinder.js',
-                            'modules/el-finder/js/elFinder.version.js',
-                            'modules/el-finder/js/jquery.elfinder.js',
-                            'modules/el-finder/js/elFinder.options.js',
-                            'modules/el-finder/js/elFinder.history.js',
-                            'modules/el-finder/js/elFinder.command.js',
-                            'modules/el-finder/js/elFinder.resources.js',
-                            'modules/el-finder/js/jquery.dialogelfinder.js',
-                            'modules/el-finder/js/i18n/elfinder.en.js',
-                        ),
-
-                        array_map(
-                            function($value) { return 'modules/el-finder/js/ui/'.$value; },
-                            array_diff(
-                                scandir(__DIR__.'/../../../studio-42/elfinder/js/ui'),
-                                array('..', '.')
-                            )
-                        ),
-
-                        array_map(
-                            function($value) { return 'modules/el-finder/js/commands/'.$value; },
-                            array_diff(
-                                scandir(__DIR__.'/../../../studio-42/elfinder/js/commands'),
-                                array('..', '.')
-                            )
-                        )
-                ),
-
-                'modules/el-finder/css/elfinder.full.css' => array_map(
-                    function($value) {return 'modules/el-finder/css/'.$value; },
-                    array_diff(
-                        scandir(__DIR__.'/../../../studio-42/elfinder/css'),
-                        array('..', '.')
-                    )
-                ),
-            ),
             'aliases' => array(
                 'modules/el-finder/js/' => __DIR__ . '/../../../studio-42/elfinder/js/',
                 'modules/el-finder/css/' => __DIR__ . '/../../../studio-42/elfinder/css/',
