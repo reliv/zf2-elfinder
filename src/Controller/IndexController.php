@@ -39,7 +39,7 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends AbstractActionController
 {
-	/**
+    /**
      * @var array
      */
     protected $config;
@@ -101,7 +101,7 @@ class IndexController extends AbstractActionController
         $viewParams['connectorPath'] = $connectorPath;
 
         $fileType = $this->getEvent()->getRouteMatch()->getParam('fileType');
-        if (!empty($fileType)) {
+        if (!empty($type)) {
             $viewParams['connectorPath'] .= '/' . $fileType;
         }
 
@@ -137,7 +137,6 @@ class IndexController extends AbstractActionController
             // set read+write to false, other (locked+hidden) set to true
             : null; // else elFinder decide it itself
     }
-
 
     public function getConfig()
     {

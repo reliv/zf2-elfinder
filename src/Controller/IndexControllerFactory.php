@@ -1,9 +1,8 @@
 <?php
 /**
- * Index Controller for the entire application
+ * Index Controller Factory
  *
- * This file contains the main controller used for the application.  This
- * should extend from the base class and should need no further modification.
+ * This file contains the factory for the main controller used for the application.
  *
  * PHP version 5.3
  *
@@ -19,12 +18,13 @@ namespace Reliv\ElFinder\Controller;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+
 /**
  * Index Controller Factory
  *
- *
- * @author    Cyril Rouillon <cyril@misterpatate.fr>
- * @copyright 2016
+ * @category  Reliv
+ * @author    Westin Shafer <wshafer@relivinc.com>
+ * @copyright 2012 Reliv International
  * @license   License.txt New BSD License
  * @version   Release: 1.0
  *
