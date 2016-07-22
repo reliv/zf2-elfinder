@@ -39,6 +39,16 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends AbstractActionController
 {
+	/**
+     * @var array
+     */
+    protected $config;
+
+    public function __construct(array $config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * Index Action - Used when index or root document is called.
      *
@@ -131,8 +141,7 @@ class IndexController extends AbstractActionController
 
     public function getConfig()
     {
-        $config = $this->getServiceLocator()->get('config');
-        return $config['elfinder'];
+        return $this->config['elfinder'];
     }
 
     public function getConnectorPath()
