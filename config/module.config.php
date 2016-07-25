@@ -82,8 +82,8 @@ return array(
     ),
 
     'controllers' => array(
-        'invokables' => array(
-            'ElFinderIndexController' => 'Reliv\ElFinder\Controller\IndexController',
+        'factories' => array(
+            'ElFinderIndexController' => 'Reliv\ElFinder\Controller\IndexControllerFactory',
         ),
     ),
 
