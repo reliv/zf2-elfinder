@@ -29,7 +29,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*",
+        "zendframework/zendframework": ">=2.0",
         "studio-42/elfinder": "2.1.*",
         "rwoverdijk/assetmanager": "1.*"
     },
