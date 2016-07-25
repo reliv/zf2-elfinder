@@ -101,7 +101,7 @@ class IndexController extends AbstractActionController
         $viewParams['connectorPath'] = $connectorPath;
 
         $fileType = $this->getEvent()->getRouteMatch()->getParam('fileType');
-        if (!empty($type)) {
+        if (!empty($fileType)) {
             $viewParams['connectorPath'] .= '/' . $fileType;
         }
 
