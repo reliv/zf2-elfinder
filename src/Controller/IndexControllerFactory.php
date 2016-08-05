@@ -44,6 +44,6 @@ class IndexControllerFactory implements FactoryInterface
         $config = $sm->get('config');
         $ElFinderManager = $sm->get('ElFinderManager');
         
-        return new IndexController($config,$ElFinderManager);
+        return new IndexController($config, $ElFinderManager);
     }
 }

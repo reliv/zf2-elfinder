@@ -21,10 +21,12 @@ class ElFinderManager
 
     /** @var ServiceManager */
     public $serviceManager;
-    private function getServiceLocator(){
+    private function getServiceLocator()
+    {
         return $this->serviceManager;
     }
-    public function __construct($sm){
+    public function __construct($sm)
+    {
         $this->serviceManager = $sm;
     }
 
