@@ -163,4 +163,10 @@ return array(
             ),
         ),
     ),
+	
+	'service_manager' => array(
+        'factories' => array(
+            'ElFinderManager' => 'Reliv\ElFinder\Service\ElFinderManagerFactory'
+        ),
+    ),
 );

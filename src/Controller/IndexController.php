@@ -43,10 +43,16 @@ class IndexController extends AbstractActionController
      * @var array
      */
     protected $config;
-
-    public function __construct(array $config)
+    
+    /**
+     * @var ElFinderManager
+     */
+    protected $ElFinderManager;
+    
+    public function __construct(array $config, ElFinderManager $ElFinderManager)
     {
         $this->config = $config;
+        $this->ElFinderManager = $ElFinderManager;
     }
 
     /**
@@ -164,27 +170,6 @@ class IndexController extends AbstractActionController
             $mount = $config['mounts'][$type];
         }
 
-        return $this->getElFinderConfig($mount);
-    }
-
-    protected function getElFinderConfig($mount)
-    {
-        foreach ($mount['roots'] as $k => $v) {
-            if (isset($v['configService'])) {
-                $configService = $this->getServiceLocator()->get($v['configService']);
-
-                if (!$configService instanceof ConfigInterface) {
-                    throw new InvalidArgumentException(
-                        $k.' configuration error: Service Configs must be an instance of the ConfigInterface.'
-                    );
-                }
-
-                $mount['roots'][$k] = $configService->getConfig();
-            }
-
-            $mount['roots'][$k]['accessControl'] = array($this, 'access');
-        }
-
-        return $mount;
+        return $this->ElFinderManager->getElFinderConfig($mount);
     }
 }
