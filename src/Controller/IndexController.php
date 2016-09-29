@@ -20,6 +20,7 @@ namespace Reliv\ElFinder\Controller;
 use Reliv\ElFinder\Config\ConfigInterface;
 use Reliv\ElFinder\Exception\RuntimeException;
 use Reliv\ElFinder\Exception\InvalidArgumentException;
+use Reliv\ElFinder\Service\ElFinderManager;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
