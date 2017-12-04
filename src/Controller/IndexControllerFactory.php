@@ -16,7 +16,11 @@
  */
 namespace Reliv\ElFinder\Controller;
 
-use Zend\ServiceManager\FactoryInterface;
+use Interop\Container\ContainerInterface;
+use Interop\Container\Exception\ContainerException;
+use Zend\ServiceManager\Exception\ServiceNotCreatedException;
+use Zend\ServiceManager\Exception\ServiceNotFoundException;
+use Zend\ServiceManager\Factory\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 /**
@@ -31,19 +35,11 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class IndexControllerFactory implements FactoryInterface
 {
-    /**
-     * Create service
-     *
-     * @param ServiceLocatorInterface $serviceLocator
-     *
-     * @return mixed
-     */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $sm = $serviceLocator->getServiceLocator();
-        $config = $sm->get('config');
-        $ElFinderManager = $sm->get('ElFinderManager');
-        
+        $config = $container->get('config');
+        $ElFinderManager = $container->get('ElFinderManager');
+
         return new IndexController($config, $ElFinderManager);
     }
 }
