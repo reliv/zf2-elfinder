@@ -21,8 +21,8 @@ use Reliv\ElFinder\Config\ConfigInterface;
 use Reliv\ElFinder\Exception\RuntimeException;
 use Reliv\ElFinder\Exception\InvalidArgumentException;
 use Reliv\ElFinder\Service\ElFinderManager;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
 
 /**
  * Index Controller for the entire application
@@ -59,7 +59,7 @@ class IndexController extends AbstractActionController
     /**
      * Index Action - Used when index or root document is called.
      *
-     * @return \Zend\View\Model\ViewModel
+     * @return \Laminas\View\Model\ViewModel
      */
     public function indexAction()
     {

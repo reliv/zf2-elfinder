@@ -94,7 +94,7 @@ return array(
     'router' => array(
         'routes' => array(
             'elFinder' => array(
-                'type' => \Zend\Router\Http\Segment::class,
+                'type' => \Laminas\Router\Http\Segment::class,
                 'options' => array(
                     'route' => '/elfinder[/:fileType]',
                     'defaults' => array(
@@ -105,7 +105,7 @@ return array(
                 ),
             ),
             'elFinderConnector' => array(
-                'type' => \Zend\Router\Http\Segment::class,
+                'type' => \Laminas\Router\Http\Segment::class,
                 'options' => array(
                     'route' => '/elfinder/connector[/:fileType]',
                     'defaults' => array(
@@ -116,7 +116,7 @@ return array(
                 ),
             ),
             'elFinderStandAlone' => array(
-                'type' => \Zend\Router\Http\Segment::class,
+                'type' => \Laminas\Router\Http\Segment::class,
                 'options' => array(
                     'route' => '/elfinder/standalone[/:fileType]',
                     'defaults' => array(
@@ -127,7 +127,7 @@ return array(
                 ),
             ),
             'elFinderCkEditor' => array(
-                'type' => \Zend\Router\Http\Segment::class,
+                'type' => \Laminas\Router\Http\Segment::class,
                 'options' => array(
                     'route' => '/elfinder/ckeditor[/:fileType]',
                     'defaults' => array(
@@ -138,7 +138,7 @@ return array(
                 ),
             ),
             'elFinderTinyMce' => array(
-                'type' => \Zend\Router\Http\Segment::class,
+                'type' => \Laminas\Router\Http\Segment::class,
                 'options' => array(
                     'route' => '/elfinder/tinymce[/:fileType]',
                     'defaults' => array(
