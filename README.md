@@ -46,7 +46,7 @@ This package uses composer to install.
 
   1. Install the composer package: `composer require reliv/elfinder`
 
-  2. Add 'Reliv\ElFinder' to your list of modules in `[zf2 project folder]/config/application.config.php`
+  2. Add 'Reliv\ElFinder' (and AssetManager) to your list of modules in `[zf2 project folder]/config/application.config.php`
 
   3. (Optional) Configure the module for use in your project (see configuration
      below)
