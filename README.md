@@ -1,5 +1,8 @@
 Zf2 Module for ElFinder
 ============== 
+
+#This is no longer supported. Maybe look for other options or forks.
+
 This module attempts to provide an integration layer between Zend Framework 2
 and ElFinder.
 
